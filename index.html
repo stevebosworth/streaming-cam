@@ -14,21 +14,25 @@
   <meta name="twitter:image:alt" content="Somefrills Linestream: Peter's nofrills line livestream">
 
   <style>
-    main {
+    body {
       background-color:  #FED734;
-      height: 100vw;
+    }
+
+    main {
       padding: 150px 0;
     }
 
     .video {
-      display: block;
       position: relative;
-      top: -40px;
+      margin-top: -60px;
+      z-index: 0;
     }
 
     footer {
+      background-color: #fff;
       height: 70px;
       display: flex;
+      justify-content: space-between;
     }
 
     .bold {
@@ -38,6 +42,7 @@
     .center {
       display: block;
       text-align: center;
+      margin: 0 auto;
     }
 
     h1 {
@@ -45,17 +50,20 @@
     }
 
     h2 {
+      position: relative;
       font-size: 200px;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
   <main>
     <h1 class="bold center uppercase">Peter's Nofrills Linestream</h1>
-    <h2>Somefrills</h2>
+
+    <h2 class="bold center uppercase">Somefrills</h2>
 
     <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sEszC5u5r5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/sEszC5u5r5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </main>
   <footer>
