@@ -14,63 +14,127 @@
   <meta name="twitter:image:alt" content="Somefrills Linestream: Peter's nofrills line livestream">
 
   <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
     body {
-      background-color:  #FED734;
+      height: 100%;
     }
 
-    main {
-      padding: 150px 0;
+    @font-face {
+      font-family: 'FuturaExtraBold';
+      src: url(assets/futura-extra-bold.woff);
+      font-style: normal;
+      font-weight: 400;
     }
 
-    .video {
-      position: relative;
-      margin-top: -60px;
-      z-index: 0;
-    }
-
-    footer {
-      background-color: #fff;
-      height: 70px;
-      display: flex;
-      justify-content: space-between;
+    h1,
+    h2,
+    p,
+    a {
+      font-family: 'FuturaExtraBold', sans-serif, system;
     }
 
     .bold {
       font-weight: bold;
     }
 
-    .center {
-      display: block;
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .text-center {
       text-align: center;
-      margin: 0 auto;
     }
 
     h1 {
-      font-size: 20px;
+      font-size: 1.5vw;
+      margin-bottom: 40px;
     }
 
     h2 {
       position: relative;
-      font-size: 200px;
+      font-size: 11.2vw;
       z-index: 1;
+    }
+
+    a {
+      color: #000;
+    }
+
+    body {
+      background-color:  #FED734;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      align-self: center;
+      padding: 150px 0;
+      margin-bottom: 70px;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .video {
+      position: relative;
+      margin: -6vw 75px 0;
+      z-index: 0;
+      overflow: hidden;
+      /* Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */
+      padding-top: 56.25%;
+      position: relative;
+    }
+
+    .video-iframe {
+      display: block;
+      margin: 0 auto;
+      border: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: #fff;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-item {
+      align-self: center;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1 class="bold center uppercase">Peter's Nofrills Linestream</h1>
+    <div class="content">
+      <h1 class="bold text-center uppercase">Peter's Nofrills Linestream</h1>
 
-    <h2 class="bold center uppercase">Somefrills</h2>
+      <h2 class="bold text-center uppercase">Somefrills</h2>
 
-    <div class="video">
-      <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/sEszC5u5r5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video">
+        <iframe class="video-iframe" src="https://www.youtube-nocookie.com/embed/sEszC5u5r5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen></iframe>
+      </div>
     </div>
   </main>
   <footer>
-    <div class="share-links footer-item">
-      <a href="">Facebook</a>
-      <a href="">Twitter</a>
-    </div>
+    <p class="footer-item">Tell your friends</p>
 
     <p class="footer-item">222 Lansdowne Ave, Toronto, ON M6K 3C6</p>
 
